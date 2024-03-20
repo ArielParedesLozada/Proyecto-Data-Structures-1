@@ -23,4 +23,12 @@ public class Profesor extends Trabajador{
         int years = period.getYears();
         return years;
     }
+
+    public boolean addCurso(Curso curso){
+        if (!this.cursos.contains(curso)) {
+            this.cursos.add(curso);
+            return true;
+        }
+        return false;
+    }
 }
