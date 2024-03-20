@@ -10,8 +10,7 @@ public class Estudiante extends Persona {
     private String direccion;
     private ArraySet<Curso> cursos;
 
-    public Estudiante(String cedula, String nombre1, String nombre2, String apellido1, String apellido2, Date fechaNac,
-            String direccion) {
+    public Estudiante(String cedula, String nombre1, String nombre2, String apellido1, String apellido2, Date fechaNac, String direccion) {
         super(cedula, nombre1, nombre2, apellido1, apellido2, fechaNac);
         this.direccion = direccion;
         this.cursos = new ArraySet<>();
@@ -28,6 +27,10 @@ public class Estudiante extends Persona {
             return true;
         }
         return false;
+    }
+
+    public boolean removeCurso(Curso curso){
+        return this.cursos.remove(curso);
     }
 
     public float getPromedio(Curso curso) {
