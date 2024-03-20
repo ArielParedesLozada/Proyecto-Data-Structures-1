@@ -55,7 +55,16 @@ public class Curso {
     public void imprimir(){
         Iterator<ArrayMap<Estudiante,Float>> students = this.estudiantes.iterator();
         while (students.hasNext()) {
-            System.out.println(students.next().getElement());
+            ArrayMap<Estudiante,Float> student = students.next();
+            if (student != null) {
+                System.out.println(student.getElement().toString());
+            }
+
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre;
     }
 }

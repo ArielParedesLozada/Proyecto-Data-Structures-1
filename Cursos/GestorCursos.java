@@ -51,9 +51,13 @@ public class GestorCursos {
     }
 
     public void imprimeCursos() {
-        Iterator<Curso> curosos = this.cursos.iterator();
-        while (curosos.hasNext()) {
-            curosos.next().imprimir();
+        Iterator<Curso> cursosIterator = this.cursos.iterator();
+        while (cursosIterator.hasNext()) {
+            Curso curso = cursosIterator.next();
+            if (curso != null) {
+                System.out.print(curso.toString());
+                curso.imprimir();
+            }
         }
     }
 }
