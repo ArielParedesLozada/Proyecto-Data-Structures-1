@@ -35,7 +35,7 @@ public class Curso {
         Iterator<ArrayMap<Estudiante,Float>> students = this.estudiantes.iterator();
         while (students.hasNext()) {
             ArrayMap<Estudiante, Float> student = students.next();
-            if (student.getElement().equals(est)) {
+            if (student!= null && student.getElement().equals(est)) {
                 student.add(nota);
             }
         }
@@ -45,7 +45,7 @@ public class Curso {
         Iterator<ArrayMap<Estudiante,Float>> students = this.estudiantes.iterator();
         while (students.hasNext()) {
             ArrayMap<Estudiante,Float> student = students.next();
-            if (student.getElement().equals(est)) {
+            if (student != null && student.getElement().equals(est)) {
                 return student.iterator();
             }
         }
@@ -59,7 +59,6 @@ public class Curso {
             if (student != null) {
                 System.out.println(student.getElement().toString());
             }
-
         }
     }
 

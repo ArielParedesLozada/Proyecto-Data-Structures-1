@@ -46,7 +46,10 @@ public class GestorCursos {
     public void imprimePersonas() {
         Iterator<Persona> personas = this.estudiantes.iterator();
         while (personas.hasNext()) {
-            System.out.println(personas.next());
+            Persona persona = personas.next();
+            if (persona != null) {
+                System.out.println(persona.toString());
+            }
         }
     }
 
@@ -55,7 +58,7 @@ public class GestorCursos {
         while (cursosIterator.hasNext()) {
             Curso curso = cursosIterator.next();
             if (curso != null) {
-                System.out.print(curso.toString());
+                System.out.println(curso.toString());
                 curso.imprimir();
             }
         }
