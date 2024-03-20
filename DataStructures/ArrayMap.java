@@ -1,12 +1,19 @@
 package DataStructures;
 
-public class ArrayMap<T,U> {
+import java.util.Iterator;
+
+public class ArrayMap<T,U> implements ArrayCosa<U>{
     private ArraySet<U> set;
     private T element;
 
     public ArrayMap(T element){
         this.element = element;
         this.set = new ArraySet<>();
+    }
+
+    @Override
+    public Iterator<U> iterator() {
+        return this.set.iterator();
     }
 
     public void add(U element){

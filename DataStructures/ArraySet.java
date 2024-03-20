@@ -1,12 +1,20 @@
 package DataStructures;
 
-public class ArraySet<T>{
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class ArraySet<T> implements ArrayCosa<T>{
     private T[] set;
     private int count;
 
     public ArraySet() {
         this.set = (T[]) new Object[10];
         this.count = 0;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return Arrays.asList(set).iterator();
     }
 
     private void expand() {
@@ -17,12 +25,15 @@ public class ArraySet<T>{
         this.set = nuevo;
     }
 
-    private void trim(){
-        for (int i = 1; i < this.set.length-1; i++) {
-            if (this.set[i] ==  null) {
-                this.set[i] = this.set[i+1];
+    private void trim() {
+        T[] nuevo = (T[]) new Object[this.count];
+        int j = 0;
+        for (int i = 0; i < this.set.length; i++) {
+            if (this.set[i] != null) {
+                nuevo[j++] = this.set[i];
             }
         }
+        this.set = nuevo;
     }
 
     public void add(T element) {
@@ -34,7 +45,7 @@ public class ArraySet<T>{
     }
 
     public boolean remove(T element) {
-        for (int i = 0; i < this.set.length; i++) {
+        for (int i = 0; i < this.count; i++) {
             if (this.set[i].equals(element)) {
                 this.set[i] = null;
                 this.count--;
@@ -45,8 +56,8 @@ public class ArraySet<T>{
         return false;
     }
 
-    public boolean contains(T element){
-        for (int i = 0; i < this.set.length; i++) {
+    public boolean contains(T element) {
+        for (int i = 0; i < this.count; i++) {
             if (this.set[i].equals(element)) {
                 return true;
             }
@@ -54,7 +65,7 @@ public class ArraySet<T>{
         return false;
     }
 
-    public int size(){
+    public int size() {
         return this.count;
     }
 }
