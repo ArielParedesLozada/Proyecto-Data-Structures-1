@@ -54,23 +54,6 @@ public class ArraySet<T>{
         return false;
     }
 
-    public int getIndex(T element){
-        for (int i = 0; i < this.set.length; i++) {
-            if (this.set[i].equals(element)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public boolean setIndex(int index, T element){
-        if (index > 0) {
-            this.set[index] = element;
-            return true;
-        }
-        return false;
-    }
-
     public int size(){
         return this.count;
     }
