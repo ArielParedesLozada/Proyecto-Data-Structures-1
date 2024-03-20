@@ -1,7 +1,7 @@
 package DataStructures;
 
 public class ArrayMap<T,U> {
-    public ArraySet<U> set;
+    private ArraySet<U> set;
     private T element;
 
     public ArrayMap(T element){

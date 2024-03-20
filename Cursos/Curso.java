@@ -1,7 +1,9 @@
-package Entities;
+package Cursos;
 
 import DataStructures.ArrayMap;
 import DataStructures.ArraySet;
+import Personas.Estudiante;
+import Personas.Profesor;
 
 public class Curso {
     private String nombre;
@@ -23,30 +25,5 @@ public class Curso {
             return true;
         }
         return false;
-    }
-
-    public ArraySet<Float> getNotas(Estudiante est){
-        ArraySet<Float> notas = new ArraySet<>();
-        for (int i = 0; i < this.estudiantes.set.length; i++) {
-            if (this.estudiantes.set[i].getElement().equals(est)) {
-                for (int j = 0; j < this.estudiantes.set[i].set.size(); j++) {
-                    notas.add(this.estudiantes.set[i].set.set[j]);
-                }
-            }
-        }
-        return notas;
-    }
-
-    public boolean setNota(float nota, Estudiante est){
-        ArrayMap<Estudiante,Float> target = new ArrayMap<>(est);
-        target.add(nota);
-        int index = this.estudiantes.getIndex(target);
-        return this.estudiantes.setIndex(index, target);
-    }
-
-    public void imprimir(){
-        for (int i = 0; i < this.estudiantes.set.length; i++) {
-            System.out.println(this.estudiantes.set[i].getElement());
-        }
     }
 }

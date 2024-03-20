@@ -1,7 +1,8 @@
-package Entities;
+package Personas;
 
 import java.util.Date;
 
+import Cursos.Curso;
 import DataStructures.ArraySet;
 
 public class Estudiante extends Persona {
@@ -26,16 +27,4 @@ public class Estudiante extends Persona {
         }
         return false;
     }
-
-    public float promedio(Curso curso){
-        float promedio = 0;
-        int num = 0;
-        ArraySet<Float> notas = curso.getNotas(this);
-        for (int i = 0; i < notas.set.length; i++) {
-            promedio += notas.set[i];
-            num++;
-        }
-        return (num > 0) ? (promedio/num) : -1;
-    }
-
 }

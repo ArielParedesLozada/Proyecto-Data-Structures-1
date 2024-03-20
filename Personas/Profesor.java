@@ -1,10 +1,11 @@
-package Entities;
+package Personas;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
+import Cursos.Curso;
 import DataStructures.ArraySet;
 
 public class Profesor extends Trabajador{

@@ -1,7 +1,7 @@
 package DataStructures;
 
 public class ArraySet<T>{
-    public T[] set;
+    private T[] set;
     private int count;
 
     public ArraySet() {
