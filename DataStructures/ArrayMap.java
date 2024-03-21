@@ -16,6 +16,16 @@ public class ArrayMap<T,U> implements ArrayCosa<U>{
         return this.set.iterator();
     }
 
+    @Override
+    public int size() {
+        return this.set.size();
+    }
+
+    @Override
+    public boolean contains(U element){
+        return this.set.contains(element);
+    }
+
     public void add(U element){
         this.set.add(element);
     }
@@ -31,10 +41,4 @@ public class ArrayMap<T,U> implements ArrayCosa<U>{
     public T getElement(){
         return this.element;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        return this.element == obj;
-    }
-
 }
